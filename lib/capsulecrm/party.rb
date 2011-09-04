@@ -59,6 +59,16 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     self.class.to_s.include? required_class
   end
 
+  def tag(value)
+    # unset tags so that if anyone were to request tags again, it
+    # requests an update from the server.
+    @tags = nil
+    path = self.class.get_path
+    path = [path, '/', id, '/tag/', value.to_s].join
+    req = self.class.post(path)
+    req.response.code == ("201" || "200")
+  end
+  
   # nodoc
   def self.get_path
     '/api/party'
