@@ -2,3 +2,9 @@ source "http://rubygems.org"
 
 # Specify your gem's dependencies in capsulecrm.gemspec
 gemspec
+
+group :development do
+  gem 'webmock'
+  gem 'vcr'
+end
+  
