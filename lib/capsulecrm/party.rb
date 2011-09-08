@@ -64,7 +64,8 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     # requests an update from the server.
     @tags = nil
     path = self.class.get_path
-    path = [path, '/', id, '/tag/', value.to_s].join
+    tag = URI.escape(value.to_s)
+    path = [path, id, 'tag', ].join('/')
     req = self.class.post(path)
     req.response.code == ("201" || "200")
   end
