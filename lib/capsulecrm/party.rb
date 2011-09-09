@@ -65,7 +65,7 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     @tags = nil
     path = self.class.get_path
     tag = URI.escape(value.to_s)
-    path = [path, id, 'tag', ].join('/')
+    path = [path, id, 'tag', tag].join('/')
     req = self.class.post(path)
     req.response.code == ("201" || "200")
   end
