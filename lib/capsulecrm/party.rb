@@ -69,6 +69,18 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     req = self.class.post(path)
     req.response.code == ("201" || "200")
   end
+
+  
+  def untag(value)
+    # unset tags so that if anyone were to request tags again, it
+    # requests an update from the server.
+    @tags = nil
+    path = self.class.get_path
+    tag = URI.escape(value.to_s)
+    path = [path, id, 'tag', tag].join('/')
+    req = self.class.delete(path)
+    req.response.code == ("201" || "200")
+  end
   
   # nodoc
   def self.get_path
