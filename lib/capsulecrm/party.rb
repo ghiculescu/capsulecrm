@@ -79,7 +79,7 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     tag = URI.escape(value.to_s)
     path = [path, id, 'tag', tag].join('/')
     req = self.class.delete(path)
-    req.response.code == ("201" || "200")
+    req.response.code == "200"
   end
   
   # nodoc
