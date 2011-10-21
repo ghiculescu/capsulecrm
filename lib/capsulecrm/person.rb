@@ -6,7 +6,7 @@ class CapsuleCRM::Person < CapsuleCRM::Party
   attr_accessor :last_name
   attr_accessor :organisation_id
   attr_accessor :title
-
+  attr_accessor :note
 
   define_attribute_methods [:about, :first_name, :last_name, :job_title, :organisation_id, :title]
 
@@ -116,7 +116,8 @@ class CapsuleCRM::Person < CapsuleCRM::Party
       'jobTitle' => 'job_title',
       'lastName' => 'last_name',
       'organisationId' => 'organisation_id',
-      'title' => 'title'
+      'title' => 'title',
+      'note' => 'note'
     }
     super.merge map
   end

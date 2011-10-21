@@ -26,6 +26,9 @@ person.last_name
 person.job_title
 person.about
 
+# Add a note to the history
+person.add_history "This is a note"
+
 # update a person object
 person.first_name = "Homer"
 person.last_name = "Simpson"
