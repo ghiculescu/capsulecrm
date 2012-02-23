@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.summary     = %q{CapsuleCRM API Gem}
   s.description = %q{CapsuleCRM API Gem}
 
-  s.add_dependency 'httparty', '>= 0.7.4'
-  s.add_dependency 'activemodel', '>= 3.0.5'
-  s.add_dependency 'activesupport', '>= 3.0.5'
+  s.add_dependency 'httparty', '~> 0.7'
+  s.add_dependency 'activemodel', '~> 3.0'
+  s.add_dependency 'activesupport', '~> 3.0'
 
   s.rubyforge_project = "capsulecrm"
 

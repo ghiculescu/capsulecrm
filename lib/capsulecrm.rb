@@ -3,6 +3,7 @@ require 'active_support/core_ext/hash'
 require 'active_support'
 require 'active_model'
 require 'httparty'
+require 'uri'
 module CapsuleCRM
 
   mattr_accessor :account_name
