@@ -52,6 +52,10 @@ class PersonDotFindByIdTest < Test::Unit::TestCase
     assert_equal CapsuleCRM::ChildCollection, @person.phone_numbers.class
     assert_equal 1, @person.websites.size
   end
+  
+  def test_history
+    
+  end
 
   def teardown
     WebMock.reset!

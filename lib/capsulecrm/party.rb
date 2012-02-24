@@ -1,4 +1,6 @@
 class CapsuleCRM::Party < CapsuleCRM::Base
+  include CapsuleCRM::History
+  
   # nodoc
   def addresses
     return @addresses if @addresses
@@ -102,14 +104,6 @@ class CapsuleCRM::Party < CapsuleCRM::Base
   def self.search(query, options={})
     options[:q] = query
     find_all(options)
-  end
-  
-  def add_history(note)
-    if note
-      path = self.class.get_path
-      path = [path, self.id, 'history'].join '/'
-      self.class.create(Hash[{:note => note}], {:root => 'historyItem', :path => path})
-    end
   end
 
   def self.init_one(response)

@@ -107,9 +107,10 @@ module CapsuleCRM
 
 
     # nodoc
-    def self.find_all(options={})
+    def self.find_all(options={}, path=nil)
+      path ||= get_path
       params = query_params(options)
-      @@last_response = get(get_path, :query => params)
+      @@last_response = get(path, :query => params)
       init_many(last_response)
     end
 

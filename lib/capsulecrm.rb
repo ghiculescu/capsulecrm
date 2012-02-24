@@ -28,6 +28,7 @@ end
 
 require 'capsulecrm/record_not_found'
 require 'capsulecrm/base'
+require 'capsulecrm/history'
 require 'capsulecrm/party'
 require 'capsulecrm/person'
 require 'capsulecrm/organisation'
@@ -40,4 +41,5 @@ require 'capsulecrm/email'
 require 'capsulecrm/phone'
 require 'capsulecrm/address'
 require 'capsulecrm/tag'
+require 'capsulecrm/history_item'
 require 'capsulecrm/website'
