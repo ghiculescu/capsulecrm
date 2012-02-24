@@ -9,18 +9,17 @@ class PartyDotHistoryTest < Test::Unit::TestCase
 
   def test_load_history
     VCR.use_cassette('party.history') do
-      @history = @person.history
+      assert_equal 2, @person.history.size
+      assert_equal "First subject", @person.history[0].subject
     end
-    assert_equal 2, @history.size
-    assert_equal "First subject", @history[0].subject
   end
   
   def test_add_history
+    skip "Should write a cassette to handle adding a note"    
     VCR.use_cassette('party.history') do
-      @history = @person.history
+      @person.add_history "new history"
+      assert_equal 2, @person.history.size
     end
-    assert_equal 2, @history.size
-    assert_equal "First subject", @history[0].subject
   end
 
   def teardown

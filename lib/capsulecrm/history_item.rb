@@ -5,7 +5,7 @@ class CapsuleCRM::HistoryItem < CapsuleCRM::Child
   attr_accessor :creator
   attr_accessor :subject
   attr_accessor :note
-  
+    
   def self.xml_map
     map = {
       "id" => 'id',
