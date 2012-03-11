@@ -28,7 +28,7 @@
         <historyItem>
           <id>1</id>
           <type>Note</type>
-          <entryDate>2012-01-31T18:00:00Z</entryDate>
+          <entryDate>2012-01-30T18:00:00Z</entryDate>
           <creator>Creator Name</creator>
           <subject>First subject</subject>
           <note>This is the first note</note>
@@ -36,7 +36,7 @@
         <historyItem>
           <id>2</id>
           <type>Note</type>
-          <entryDate>2012-01-30T15:00:00Z</entryDate>
+          <entryDate>2012-01-31T15:00:00Z</entryDate>
           <creator>Creator Name</creator>
           <subject>Second subject</subject>
           <note>This is the second note</note>
