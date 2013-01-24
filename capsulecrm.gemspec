@@ -3,11 +3,11 @@ $:.push File.expand_path("../lib", __FILE__)
 require "capsulecrm/version"
 
 Gem::Specification.new do |s|
-  s.name        = "capsulecrmii"
+  s.name        = "capsulecrm-b"
   s.version     = CapsuleCRM::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Ahmed Adam", "dsimard"]
-  s.email       = ["ahmed.msgs@gmail.com", "dsimard@azanka.ca"]
+  s.authors     = ["Ahmed Adam", "dsimard", "FWMatt"]
+  s.email       = ["ahmed.msgs@gmail.com", "dsimard@azanka.ca", "matt@futureworkshops.com"]
   s.homepage    = "https://github.com/dsimard/capsulecrm"
   s.summary     = %q{CapsuleCRM API Gem}
   s.description = %q{CapsuleCRM API Gem}

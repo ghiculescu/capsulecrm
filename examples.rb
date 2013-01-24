@@ -1,5 +1,5 @@
 # NOTE: CapsuleCRM::Person and CapsuleCRM::Organisation have virtually identically methods.
-
+require 'capsulecrm'
 
 # find by id
 person = CapsuleCRM::Person.find 123
