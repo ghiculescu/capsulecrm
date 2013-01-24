@@ -55,6 +55,9 @@ class CapsuleCRM::Opportunity < CapsuleCRM::Base
     new(attributes_from_xml_hash(data))
   end
 
-
+  def party
+    return nil if party_id.nil?
+    @party ||= CapsuleCRM::Party.find(party_id)
+  end
 
 end

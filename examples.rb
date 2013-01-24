@@ -1,6 +1,13 @@
 # NOTE: CapsuleCRM::Person and CapsuleCRM::Organisation have virtually identically methods.
 require 'capsulecrm'
 
+CapsuleCRM.account_name = "futureworkshops"
+CapsuleCRM.api_token = ENV['CAPSULE_CRM_API_KEY']
+CapsuleCRM.initialize!
+
+oppo = CapsuleCRM::Opportunity.find(:all).first
+puts oppo.party.name
+
 # find by id
 person = CapsuleCRM::Person.find 123
 
