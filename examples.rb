@@ -5,8 +5,10 @@ CapsuleCRM.account_name = "futureworkshops"
 CapsuleCRM.api_token = ENV['CAPSULE_CRM_API_KEY']
 CapsuleCRM.initialize!
 
-oppo = CapsuleCRM::Opportunity.find(:all).first
+oppo = CapsuleCRM::Opportunity.find(1084419)
 puts oppo.party.name
+puts oppo.custom_fields[0].label
+puts oppo.custom_fields[0].text
 
 # find by id
 person = CapsuleCRM::Person.find 123

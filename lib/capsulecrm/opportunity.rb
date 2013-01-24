@@ -50,16 +50,26 @@ class CapsuleCRM::Opportunity < CapsuleCRM::Base
     CapsuleCRM::Collection.new(self, data)
   end
 
-
   # nodoc
   def self.init_one(response)
     data = response['opportunity']
     new(attributes_from_xml_hash(data))
   end
 
+  # nodoc
   def party
     return nil if party_id.nil?
     @party ||= CapsuleCRM::Party.find(party_id)
+  end
+  
+  # nodoc
+  def custom_fields
+    return @custom_fields if @custom_fields
+    path = self.class.get_path
+    path = [path, '/', id, '/customfield'].join
+    last_response = self.class.get(path)
+    data = last_response['customFields'].try(:[], 'customField')
+    @custom_fields = CapsuleCRM::CustomField.init_many(self, data)
   end
 
 end
