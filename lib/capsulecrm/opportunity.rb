@@ -11,6 +11,7 @@ class CapsuleCRM::Opportunity < CapsuleCRM::Base
   attr_accessor :milestone
   attr_accessor :updated_on
   attr_accessor :created_on  
+  attr_accessor :probability
 
   # nodoc
   def self.xml_map
@@ -25,6 +26,7 @@ class CapsuleCRM::Opportunity < CapsuleCRM::Base
       'milestone' => 'milestone',
       'updatedOn' => 'updated_on',
       'createdOn' => 'created_on',
+      'probability' => 'probability',
     }
     super.merge map
   end
