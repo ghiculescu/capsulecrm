@@ -1,4 +1,6 @@
 class CapsuleCRM::Party < CapsuleCRM::Base
+  include CapsuleCRM::History
+  
   # nodoc
   def addresses
     return @addresses if @addresses
@@ -57,6 +59,29 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     self.class.to_s.include? required_class
   end
 
+  def tag(value)
+    # unset tags so that if anyone were to request tags again, it
+    # requests an update from the server.
+    @tags = nil
+    path = self.class.get_path
+    tag = URI.escape(value.to_s)
+    path = [path, id, 'tag', tag].join('/')
+    req = self.class.post(path)
+    req.response.code == ("201" || "200")
+  end
+
+  
+  def untag(value)
+    # unset tags so that if anyone were to request tags again, it
+    # requests an update from the server.
+    @tags = nil
+    path = self.class.get_path
+    tag = URI.escape(value.to_s)
+    path = [path, id, 'tag', tag].join('/')
+    req = self.class.delete(path)
+    req.response.code == "200"
+  end
+  
   # nodoc
   def self.get_path
     '/api/party'
@@ -79,14 +104,6 @@ class CapsuleCRM::Party < CapsuleCRM::Base
   def self.search(query, options={})
     options[:q] = query
     find_all(options)
-  end
-  
-  def add_history(note)
-    if note
-      path = self.class.get_path
-      path = [path, self.id, 'history'].join '/'
-      self.class.create(Hash[{:note => note}], {:root => 'historyItem', :path => path})
-    end
   end
 
   def self.init_one(response)

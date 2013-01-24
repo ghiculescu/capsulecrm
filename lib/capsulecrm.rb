@@ -3,6 +3,7 @@ require 'active_support/core_ext/hash'
 require 'active_support'
 require 'active_model'
 require 'httparty'
+require 'uri'
 module CapsuleCRM
 
   mattr_accessor :account_name
@@ -27,6 +28,7 @@ end
 
 require 'capsulecrm/record_not_found'
 require 'capsulecrm/base'
+require 'capsulecrm/history'
 require 'capsulecrm/party'
 require 'capsulecrm/person'
 require 'capsulecrm/organisation'
@@ -39,4 +41,5 @@ require 'capsulecrm/email'
 require 'capsulecrm/phone'
 require 'capsulecrm/address'
 require 'capsulecrm/tag'
+require 'capsulecrm/history_item'
 require 'capsulecrm/website'

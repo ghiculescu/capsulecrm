@@ -1,0 +1,45 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/party/10185257/history
+    body:
+    headers:
+      user-agent:
+      - CapsuleCRM ruby gem
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - "*/*"
+      server:
+      - Apache
+      date:
+      - Tue, 12 Apr 2011 12:31:20 GMT
+      content-length:
+      - "426"
+      set-cookie:
+      - "[SESSION-COOKIE]"
+    body: |
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+      <history size="2">
+        <historyItem>
+          <id>1</id>
+          <type>Note</type>
+          <entryDate>2012-01-30T18:00:00Z</entryDate>
+          <creator>Creator Name</creator>
+          <subject>First subject</subject>
+          <note>This is the first note</note>
+        </historyItem>
+        <historyItem>
+          <id>2</id>
+          <type>Note</type>
+          <entryDate>2012-01-31T15:00:00Z</entryDate>
+          <creator>Creator Name</creator>
+          <subject>Second subject</subject>
+          <note>This is the second note</note>
+        </historyItem>
+      </history>
+    http_version: "1.1"
