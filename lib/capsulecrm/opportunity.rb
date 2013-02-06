@@ -21,6 +21,7 @@ class CapsuleCRM::Opportunity < CapsuleCRM::Base
       'currency' => 'currency',
       'value' => 'value',
       'durationBasis' => 'duration_basis',
+      'duration' => 'duration',
       'expectedCloseDate' => 'expected_close_date',
       'actualCloseDate' => 'actual_close_date',
       'milestone' => 'milestone',
