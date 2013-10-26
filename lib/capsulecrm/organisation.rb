@@ -2,6 +2,7 @@ class CapsuleCRM::Organisation < CapsuleCRM::Party
 
   attr_accessor :about
   attr_accessor :name
+  attr_accessor :note
 
 
   # nodoc
@@ -32,7 +33,8 @@ class CapsuleCRM::Organisation < CapsuleCRM::Party
   def self.xml_map
     map = {
       'about' => 'about',
-      'name' => 'name'
+      'name' => 'name',
+      'note' => 'note'
     }
     super.merge map
   end
